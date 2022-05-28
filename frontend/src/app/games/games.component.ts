@@ -10,7 +10,8 @@ import { GameService } from '../game.service';
 })
 export class GamesComponent implements OnInit {
 
-  games: Game[] = [];
+  // games: Game[] = [];
+  games?: Game[];
 
   constructor(private gameService: GameService) { }
 
@@ -18,8 +19,15 @@ export class GamesComponent implements OnInit {
     this.getGames();
   }
 
-  getGames(): void {
-    this.gameService.getGames()
-        .subscribe(games => this.games = games);
+  // getGames(): void {
+  //   this.gameService.getGames()
+  //       .subscribe(games => this.games = games);
+  // }
+
+  getGames() {
+    this.gameService.getGames().subscribe(data => {
+      this.games = data;
+      console.log(data);
+    });
   }
 }
