@@ -1,8 +1,134 @@
-<h2>My Games</h2>
+<!-- <h2>My Games</h2>
 <ul class="games">
   <li *ngFor="let game of games">
     <a routerLink="/detail/{{game.id}}">
       <span class="badge">{{game.id}}</span> {{game.name}}
     </a>
+    <img src="{{game.cover.url}}" alt="{{game.name}}">
   </li>
-</ul>
+</ul> -->
+
+<!-- <div class="row">
+  <div class="example-2 card" *ngFor="let game of games">
+    <div class="wrapper" style="background: url(https://images.igdb.com/igdb/image/upload/t_cover_big/{{game.cover.image_id}}.png) center / cover no-repeat;">
+      <div class="header">
+        <div class="date">
+          <span class="day">12</span>
+          <span class="month">Aug</span>
+          <span class="year">2016</span>
+        </div>
+        <ul class="menu-content">
+          <li><a href="#" class="fa fa-bookmark-o"><span>0</span></a></li>
+          <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+          <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+        </ul>
+      </div>
+      <div class="data">
+        <div class="content">
+          <span class="author">Jane Doe</span>
+          <h1 class="title"><a href="#">{{game.name}}</a></h1>
+          <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+          <a href="#" class="button">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <h2>My Games</h2>
+<div class="glassBox" *ngFor="let game of games">
+  <div style="width: 258px;">
+    <div id="card">
+      <span class="Card-id" style="width: 5em;">{{game.id}}</span>
+      <h3 class="glassBox__title">{{game.name}}</h3>
+      <div  class="glassBox__imgBox">
+          <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{game.cover.image_id}}.png" alt="{{game.name}}" class="card-logo">
+      </div>
+      <a routerLink = "/pokemons/{{game.id}}"> <button mat-button >See more details </button></a>
+    </div>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="product--gray" *ngFor="let game of games">
+    <div class="ratings" style="position: initial;">
+      <span class="rating" *ngIf="game.rating">{{game.rating | number:'1.0-0'}}</span>
+      <span class="rating" *ngIf="!game.rating">0</span>
+    </div>
+    <!-- <div class="product_inner">
+      <a routerLink="/detail/{{game.id}}" class="mouse-cursor-gradient-tracking">
+        <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{game.cover.image_id}}.png" alt="{{game.name}}" width="352" height="264" style="margin: 0 0 12px;">
+      </a>
+      <p>{{game.name}}</p>
+      <button>Follow</button>
+    </div> -->
+    <!-- <div class="product_overlay">
+      <h2>Added to basket</h2>
+      <i class="fa fa-check"></i>
+    </div> -->
+
+
+    <div class="container">
+      <div class="cellphone-container">
+          <div class="movie">
+            <!-- <div class="menu"><i class="material-icons"></i></div> -->
+            <div class="movie-img" style="background-image: url(https://images.igdb.com/igdb/image/upload/t_cover_big/{{game.cover.image_id}}.png);"></div>
+            <div class="text-movie-cont">
+              <div class="mr-grid">
+                <div class="col1">
+                  <h2>{{game.name}}</h2>
+                  <ul class="movie-gen">
+                    <li>Console</li>
+                    <!-- <li>2h 49min  /</li>
+                    <li>Adventure, Drama, Sci-Fi,</li> -->
+                  </ul>
+                </div>
+              </div>
+              <div class="mr-grid summary-row">
+                <div class="col2">
+                  <h5>SUMMARY</h5>
+                </div>
+                <div class="col2">
+                   <ul class="movie-likes">
+                    <li *ngIf="game.rating"><i class="material-icons"></i>{{game.rating | number:'1.0-0'}}</li>
+                    <li *ngIf="!game.rating"><i class="material-icons"></i>0</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mr-grid">
+                <div class="col1">
+                  <!-- <p class="movie-description">{{game.summary}}</p> -->
+                </div>
+              </div>
+              <!-- <div class="mr-grid actors-row">
+                <div class="col1">
+                  <p class="movie-actors">Matthew McConaughey, Anne Hathaway, Jessica Chastain</p>
+                </div>
+              </div> -->
+              <div class="mr-grid action-row">
+                <div class="col2">
+                  <!-- <div class="watch-btn">
+                    <h3><i class="material-icons"></i>WATCH TRAILER</h3>
+                  </div> -->
+                  <button class="button">Detail</button>
+                </div>
+                <div class="col2 action-btn">
+                  <button class="button-favorite"></button>
+                </div>
+                <!-- <div class="col6 action-btn">
+                  <i class="material-icons"></i>
+                </div>
+                <div class="col6 action-btn">
+                  <i class="material-icons"></i>
+                </div> -->
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>

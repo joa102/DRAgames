@@ -26,6 +26,7 @@ export class GamesComponent implements OnInit {
 
   getGames() {
     this.gameService.getGames().subscribe(data => {
+      data.rating = Math.round(data.rating);
       this.games = data;
       console.log(data);
     });

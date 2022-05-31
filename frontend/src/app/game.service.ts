@@ -41,7 +41,7 @@ export class GameService {
   /** GET games from the API */
   getGames(): Observable<any> {
     return this.http.post(
-      `${this.igdbUrl}games`, 'fields name; rating; cover.url;',
+      `${this.igdbUrl}games`, 'fields name, rating, summary, storyline, cover.url, cover.image_id, platforms.name; search "Halo";',
       this.httpOptions
     );
   }
