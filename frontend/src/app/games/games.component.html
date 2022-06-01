@@ -49,6 +49,8 @@
   </div>
 </div> -->
 
+<app-game-search [games]="games"></app-game-search>
+
 <div class="row">
   <div class="product--gray" *ngFor="let game of games">
     <div class="ratings" style="position: initial;">
@@ -72,26 +74,34 @@
       <div class="cellphone-container">
           <div class="movie">
             <!-- <div class="menu"><i class="material-icons"></i></div> -->
-            <div class="movie-img" style="background-image: url(https://images.igdb.com/igdb/image/upload/t_cover_big/{{game.cover.image_id}}.png);"></div>
+            <div class="movie-img" *ngIf="game.cover" style="background-image: url(https://images.igdb.com/igdb/image/upload/t_cover_big/{{game.cover.image_id}}.png);"></div>
+            <div class="movie-img" *ngIf="!game.cover"></div>
             <div class="text-movie-cont">
               <div class="mr-grid">
                 <div class="col1">
                   <h2>{{game.name}}</h2>
-                  <ul class="movie-gen">
+                  <!-- <ul class="movie-gen">
                     <li>Console</li>
-                    <!-- <li>2h 49min  /</li>
-                    <li>Adventure, Drama, Sci-Fi,</li> -->
-                  </ul>
+                    <li>2h 49min  /</li>
+                    <li>Adventure, Drama, Sci-Fi,</li>
+                  </ul> -->
                 </div>
               </div>
               <div class="mr-grid summary-row">
                 <div class="col2">
-                  <h5>SUMMARY</h5>
+                  <h5 style="text-align: right;">Favourite</h5>
+                  <!-- <p *ngFor="let platform of game.platforms">
+                    <span>{{platform.name}}</span>
+                  </p> -->
+                  <!-- <p>{{game.platforms.name}}</p> -->
                 </div>
                 <div class="col2">
                    <ul class="movie-likes">
-                    <li *ngIf="game.rating"><i class="material-icons"></i>{{game.rating | number:'1.0-0'}}</li>
-                    <li *ngIf="!game.rating"><i class="material-icons"></i>0</li>
+                    <!-- <li *ngIf="game.rating"><i class="material-icons"></i>{{game.rating | number:'1.0-0'}}</li>
+                    <li *ngIf="!game.rating"><i class="material-icons"></i>0</li> -->
+                    <div class="col2 action-btn" style="margin-top: -15px;">
+                      <button class="button-favorite"></button>
+                    </div>
                   </ul>
                 </div>
               </div>
@@ -106,15 +116,16 @@
                 </div>
               </div> -->
               <div class="mr-grid action-row">
-                <div class="col2">
+                <!-- <div class="col2"> -->
                   <!-- <div class="watch-btn">
                     <h3><i class="material-icons"></i>WATCH TRAILER</h3>
                   </div> -->
-                  <button class="button">Detail</button>
-                </div>
-                <div class="col2 action-btn">
+                  <!-- <button class="button">Detail</button> -->
+                  <a routerLink="/detail/{{game.id}}" class="button">Detail</a>
+                <!-- </div> -->
+                <!-- <div class="col2 action-btn" style="margin-top: -15px;">
                   <button class="button-favorite"></button>
-                </div>
+                </div> -->
                 <!-- <div class="col6 action-btn">
                   <i class="material-icons"></i>
                 </div>

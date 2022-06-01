@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { Game } from '../game';
 import { GameService } from '../game.service';
@@ -12,11 +13,14 @@ export class GamesComponent implements OnInit {
 
   // games: Game[] = [];
   games?: Game[];
+  gamesO!: Observable<Game[]>;
+  // @Input() games?: Game[];
 
   constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
     this.getGames();
+    // console.log(this.games);
   }
 
   // getGames(): void {
@@ -26,9 +30,15 @@ export class GamesComponent implements OnInit {
 
   getGames() {
     this.gameService.getGames().subscribe(data => {
-      data.rating = Math.round(data.rating);
+      // data.rating = Math.round(data.rating);
       this.games = data;
-      console.log(data);
+      this.gamesO = data;
+      console.log(this.games);
+      // console.log(this.gamesO);
     });
   }
+
+  // emptyGames() {
+  //   this.games = [];
+  // }
 }

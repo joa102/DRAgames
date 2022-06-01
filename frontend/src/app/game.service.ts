@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Game } from './game';
-import { GAMES } from './mock-games';
+// import { GAMES } from './mock-games';
 // import { MessageService } from './message.service';
 
 @Injectable({ providedIn: 'root' })
@@ -47,11 +47,35 @@ export class GameService {
   }
 
   /** GET game by id. Will 404 if id not found */
-  getGame(id: number): Observable<Game> {
-    const url = `${this.igdbUrl}/${id}`;
-    return this.http.get<Game>(url).pipe(
-      // tap(_ => this.log(`fetched game id=${id}`)),
-      catchError(this.handleError<Game>(`getGame id=${id}`))
+  // getGame(id: number): Observable<Game> {
+  getGame(id: number): Observable<any> {
+    // const url = `${this.igdbUrl}/${id}`;
+    // return this.http.get<Game>(url).pipe(
+    //   // tap(_ => this.log(`fetched game id=${id}`)),
+    //   catchError(this.handleError<Game>(`getGame id=${id}`))
+    // );
+    return this.http.post(
+      `${this.igdbUrl}games`, 'fields name, rating, summary, storyline, cover.url, cover.image_id, platforms.name; where id = ' + id + ';',
+      this.httpOptions
+    );
+  }
+
+  /* GET games whose name contains search term */
+  // searchGames(term: string): Observable<Game[]> {
+  searchGames(term: string): Observable<any> {
+    if (!term.trim()) {
+      // if not search term, return empty game array.
+      return of([]);
+    }
+    // return this.http.get<Game[]>(`${this.igdbUrl}/?name=${term}`).pipe(
+    //   // tap(x => x.length ?
+    //   //   this.log(`found games matching "${term}"`) :
+    //   //   this.log(`no games matching "${term}"`)),
+    //   catchError(this.handleError<Game[]>('searchGames', []))
+    // );
+    return this.http.post(
+      `${this.igdbUrl}games`, 'fields name, rating, summary, storyline, cover.url, cover.image_id, platforms.name; search "' + term + '";',
+      this.httpOptions
     );
   }
 
