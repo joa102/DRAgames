@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GameService } from './game.service';
+import { ApiIgdbService } from './api-igdb.service';
 
-describe('GameService', () => {
-  let service: GameService;
+describe('ApiIgdbService', () => {
+  let service: ApiIgdbService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(GameService);
+    service = TestBed.inject(ApiIgdbService);
   });
 
   it('should be created', () => {

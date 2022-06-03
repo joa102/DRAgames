@@ -3,10 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { GamesComponent } from './games/games.component';
-// import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +19,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { PlatformsComponent } from './platforms/platforms.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -36,15 +37,16 @@ import { MatInputModule } from '@angular/material/input';
     MatGridListModule,
     MatCardModule,
     MatInputModule,
+    MatTableModule,
   ],
   declarations: [
     AppComponent,
-    DashboardComponent,
     GamesComponent,
     GameDetailComponent,
     GameSearchComponent,
     NavComponent,
-    // MessagesComponent
+    FavouritesComponent,
+    PlatformsComponent,
   ],
   bootstrap: [ AppComponent ]
 })

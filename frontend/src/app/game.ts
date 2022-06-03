@@ -11,10 +11,5 @@ export interface Game {
     image_id: string,
     url: string
   }
-  // platforms: {
-  //   id: number,
-  //   name: string
-  // }
-  // platforms: string[];
   platforms: Platform[];
 }

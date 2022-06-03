@@ -1,12 +1,6 @@
+/* Game Search's private CSS styles */
 // Variables
 $bg-color: #EEE5E9;
-
-// $blue-card: #92DCE5;
-// $orange-card: #EF6F6C;
-// $red-card: #E84855;
-// $green-card: #70C1B3;
-// $yellow-card: #E8DB7D;
-// $pink-card: #FF386D;
 
 $gray: #323A45;
 $green: #10af65;
@@ -15,7 +9,6 @@ $black: #000;
 
 // Mixins
 @mixin diagBg($color) {
-  // background: linear-gradient(-45deg, $color 50%, rgba(255, 255, 255, 0.5) 50%);
   background: linear-gradient(-45deg, $color 50%, $gray 50%);
 }
 
@@ -59,7 +52,6 @@ header {
   width: 15em;
   height: auto;
   border-radius: 3px;
-  // padding: 2em;
   margin: 1em;
   overflow: hidden;
   position: relative;
@@ -72,33 +64,8 @@ header {
     @extend .product;
     @include diagBg($black);
   }
-  // &--blue {
-  //   @extend .product;
-  //   @include diagBg($blue-card);
-  // }
-  // &--orange {
-  //   @extend .product;
-  //   @include diagBg($orange-card);
-  // }
-  // &--red {
-  //   @extend .product;
-  //   @include diagBg($red-card);
-  // }
-  // &--green {
-  //   @extend .product;
-  //   @include diagBg($green-card);
-  // }
-  // &--yellow {
-  //   @extend .product;
-  //   @include diagBg($yellow-card);
-  // }
-  // &--pink {
-  //   @extend .product;
-  //   @include diagBg($pink-card);
-  // }
   img {
     max-width: 100%;
-    // height: auto !important;
     text-align: center;
   }
   &_inner {
@@ -178,15 +145,7 @@ header {
   }
 }
 .mouse-cursor-gradient-tracking {
-  // position: relative;
-  // background: #7983ff;
-  // padding: 0.5rem 1rem;
-  // font-size: 1.2rem;
-  // border: none;
-  // color: white;
-  // cursor: pointer;
-  // outline: none;
-  // overflow: hidden;
+
 }
   .mouse-cursor-gradient-tracking span {
       position: relative;
@@ -201,16 +160,13 @@ header {
       width: var(--size);
       height: var(--size);
       background: radial-gradient(circle closest-side, $white, transparent);
-      // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-      // transform: translate(-50%, -50%);
-      // transition: width 0.2s ease, height 0.2s ease;
   }
 
   .mouse-cursor-gradient-tracking:hover::before {
      --size: 200px;
   }
 
-//-------------------
+//-------------------------------------------------------
 
   // @import "compass";
 $accent-color: #e7e7e7;
@@ -234,10 +190,8 @@ body {
 }
 .cellphone-container{
   width:375px;
-  // height:650px;
   height:580px;
   background-color:#1e1b26;
-  // margin : 60px auto 0 auto;
   box-shadow:5px 5px 115px -14px black;
   border-radius: 4px;
 }
@@ -254,7 +208,6 @@ body {
 }
 .movie-img {
   width:100%;
-  // height:380px;
   height:258px;
 //  background-image: url(https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg);
  background-image: url(https://c.tenor.com/lx2WSGRk8bcAAAAC/pulp-fiction-john-travolta.gif);
@@ -263,8 +216,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   z-index:111 !important;
-  // border-top-left-radius: 4px;
-  // border-top-right-radius: 4px;
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom,
 			color-stop(0.00,  rgba(0,0,0,1)),
 			color-stop(0.35,  rgba(0,0,0,1)),
@@ -489,14 +440,10 @@ h5 {
 }
 
 .button {
-  // border: 1px solid rgba(255, 255, 255, 0.5);
   border: none;
   color: #FFF;
   border-radius: 3px;
-  // padding: 1em 3em;
-  // padding-right: 1em;
   padding: 1em 1em 1em 1em;
-  // margin: 1em 0 0 0;
   background: none;
   cursor: pointer;
   transition: background ease-in .25s;
@@ -524,7 +471,6 @@ h5 {
   color: #FFF;
   border-radius: 3px;
   padding: 1em 3em;
-  // margin: 1em 0 0 0;
   background: none;
   cursor: pointer;
   transition: background ease-in .25s;

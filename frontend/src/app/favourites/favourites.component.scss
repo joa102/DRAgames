@@ -1,4 +1,4 @@
-/* Games Detail's private CSS styles */
+/* Favourite's private CSS styles */
 // Variables
 $bg-color: #EEE5E9;
 
@@ -439,11 +439,11 @@ h5 {
 }
 
 .button {
+  // border: 1px solid rgba(255, 255, 255, 0.5);
   border: dashed;
   color: #FFF;
   border-radius: 3px;
   padding: 1em 1em 1em 1em;
-  margin: 0em 1em 1em 1em;
   background: none;
   cursor: pointer;
   transition: background ease-in .25s;
@@ -471,7 +471,6 @@ h5 {
   color: #FFF;
   border-radius: 3px;
   padding: 1em 3em;
-  // margin: 1em 0 0 0;
   background: none;
   cursor: pointer;
   transition: background ease-in .25s;

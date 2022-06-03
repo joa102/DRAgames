@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { GamesComponent } from './games/games.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { PlatformsComponent } from './platforms/platforms.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: '/games', pathMatch: 'full' },
+  { path: 'games', component: GamesComponent },
   { path: 'detail/:id', component: GameDetailComponent },
-  { path: 'games', component: GamesComponent }
+  { path: 'favourites', component: FavouritesComponent },
+  { path: 'platforms', component: PlatformsComponent },
 ];
 
 @NgModule({

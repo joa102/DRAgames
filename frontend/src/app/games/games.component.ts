@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Game } from '../game';
-import { GameService } from '../game.service';
+import { ApiIgdbService } from '../api-igdb.service';
 
 @Component({
   selector: 'app-games',
@@ -11,34 +11,17 @@ import { GameService } from '../game.service';
 })
 export class GamesComponent implements OnInit {
 
-  // games: Game[] = [];
   games?: Game[];
-  gamesO!: Observable<Game[]>;
-  // @Input() games?: Game[];
 
-  constructor(private gameService: GameService) { }
+  constructor(private apiIgdbService: ApiIgdbService) { }
 
   ngOnInit(): void {
     this.getGames();
-    // console.log(this.games);
   }
-
-  // getGames(): void {
-  //   this.gameService.getGames()
-  //       .subscribe(games => this.games = games);
-  // }
 
   getGames() {
-    this.gameService.getGames().subscribe(data => {
-      // data.rating = Math.round(data.rating);
+    this.apiIgdbService.getGames().subscribe(data => {
       this.games = data;
-      this.gamesO = data;
-      console.log(this.games);
-      // console.log(this.gamesO);
     });
   }
-
-  // emptyGames() {
-  //   this.games = [];
-  // }
 }

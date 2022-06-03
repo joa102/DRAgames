@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 
-import { Observable} from 'rxjs';
-
-import { Game } from './game';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,5 +7,4 @@ import { Game } from './game';
 })
 export class AppComponent {
   title = 'DRAgames';
-  games!: Observable<Game[]>;
 }

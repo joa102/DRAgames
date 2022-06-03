@@ -7,7 +7,7 @@ import {
 } from 'rxjs/operators';
 
 import { Game } from '../game';
-import { GameService } from '../game.service';
+import { ApiIgdbService } from '../api-igdb.service';
 
 @Component({
   selector: 'app-game-search',
@@ -19,7 +19,7 @@ export class GameSearchComponent implements OnInit {
   @Input() games?: Game[];
   private searchTerms = new Subject<string>();
 
-  constructor(private gameService: GameService) {}
+  constructor(private apiIgdbService: ApiIgdbService) {}
 
   // Push a search term into the observable stream.
   search(term: string): void {
@@ -35,12 +35,12 @@ export class GameSearchComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      // switchMap((term: string) => this.gameService.searchGames(term)),
+      // switchMap((term: string) => this.apiIgdbService.searchGames(term)),
       switchMap((term: string) => {
         if (term.length == 0) {
-          return this.gameService.getGames();
+          return this.apiIgdbService.getGames();
         }
-        return this.gameService.searchGames(term);
+        return this.apiIgdbService.searchGames(term);
       }),
     ).subscribe(games => {
       while (this.games && this.games.length > 0) {

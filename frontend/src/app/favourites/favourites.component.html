@@ -1,9 +1,7 @@
-<app-game-search [games]="games"></app-game-search>
-
-<div class="row">
+<div class="row" style="padding-top: 23px;">
 
   <h2 style="text-align: center; color: rgba(0,0,0,.87); font-weight: bold;">
-    Games
+    Favourites
   </h2>
 
   <div class="product--gray" *ngFor="let game of games">
@@ -11,7 +9,6 @@
       <span class="rating" *ngIf="game.rating">{{game.rating | number:'1.0-0'}}</span>
       <span class="rating" *ngIf="!game.rating">0</span>
     </div>
-
     <div class="container">
       <div class="cellphone-container">
           <div class="movie">

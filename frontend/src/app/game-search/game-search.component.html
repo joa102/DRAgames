@@ -1,75 +1,10 @@
 <div id="search-component" style="margin: -4.6em 0em 0em 0em;">
-
-  <!-- <div class="d-flex justify-content-center"> -->
   <div class="d-flex flex-row-reverse">
     <div class="p-2">
-      <!-- <input #searchBox id="search-box" (input)="search(searchBox.value)" /> -->
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Search game</mat-label>
         <input #searchBox id="search-box" (input)="search(searchBox.value)" matInput placeholder="" value=""/>
       </mat-form-field>
     </div>
-    <!-- <div class="p-2">
-      <label for="search-box">Search game</label>
-    </div> -->
   </div>
-
-  <!-- <ul class="search-result">
-    <li *ngFor="let game of games$ | async" >
-      <a routerLink="/detail/{{game.id}}">
-        {{game.name}}
-      </a>
-    </li>
-  </ul>
-</div> -->
-
-  <!-- <div class="row">
-    <div class="product--gray" *ngFor="let game of games">
-      <div class="ratings" style="position: initial;">
-        <span class="rating" *ngIf="game.rating">{{game.rating | number:'1.0-0'}}</span>
-        <span class="rating" *ngIf="!game.rating">0</span>
-      </div>
-      <div class="container">
-        <div class="cellphone-container">
-            <div class="movie">
-              <div class="movie-img" *ngIf="game.cover" style="background-image: url(https://images.igdb.com/igdb/image/upload/t_cover_big/{{game.cover.image_id}}.png);"></div>
-              <div class="movie-img" *ngIf="!game.cover"></div>
-              <div class="text-movie-cont">
-                <div class="mr-grid">
-                  <div class="col1">
-                    <h2>{{game.name}}</h2>
-                    <ul class="movie-gen">
-                      <li>Console</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="mr-grid summary-row">
-                  <div class="col2">
-                    <h5>SUMMARY</h5>
-                  </div>
-                  <div class="col2">
-                    <ul class="movie-likes">
-                      <li *ngIf="game.rating"><i class="material-icons"></i>{{game.rating | number:'1.0-0'}}</li>
-                      <li *ngIf="!game.rating"><i class="material-icons"></i>0</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="mr-grid">
-                  <div class="col1">
-                  </div>
-                </div>
-                <div class="mr-grid action-row">
-                  <div class="col2">
-                    <button class="button">Detail</button>
-                  </div>
-                  <div class="col2 action-btn">
-                    <button class="button-favorite"></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 </div>
